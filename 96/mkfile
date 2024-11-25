@@ -1,0 +1,23 @@
+%.dis: %.b
+	limbo -g $stem.b
+
+DIS=\
+	t1.dis\
+
+
+all: $DIS
+	echo done
+
+test: t1.dis
+	mash ./t1.dis test1 > out1
+	wc out1
+	#mash run -x mashfile
+
+clean:
+	rm *.sbl *.out
+
+nuke:
+	rm -f *.sbl *.dis *.out
+
+profile:
+	emu-g sh -l -c "cprof -f -m Command xc ex1.dlx" | awk -f countmems.awk
