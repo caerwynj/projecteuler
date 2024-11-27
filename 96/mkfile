@@ -3,6 +3,8 @@
 
 DIS=\
 	t1.dis\
+	xc.dis\
+	xcm.dis\
 
 
 all: $DIS

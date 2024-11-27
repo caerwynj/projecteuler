@@ -3,7 +3,7 @@ include "cmd.m";
 
 main(argv: list of string)
 {
-	print("Generate exact cover for sudoku problems\n");	
+	#print("Generate exact cover for sudoku problems\n");	
 	l := read_input(hd tl argv);
 	#printgrid(l);
 	genitem(l);
@@ -67,7 +67,8 @@ genitem(l: array of array of int)
 			for(k:=1; k <=9; k++) {
 				if(!(boxes[x] & 1<<k)  &&
 					!(cols[j] & 1<<k) &&
-					!(rows[i] & 1<<k))
+					!(rows[i] & 1<<k) &&
+					(l[i][j] == 0))
 					print("p%d%d r%d%d c%d%d b%d%d\n", i, j, i, k, j, k, x, k);
 			}
 		}
