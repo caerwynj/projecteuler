@@ -119,6 +119,12 @@ visit()
 		p := nodes[q];
 		if(DEBUG)print("node %d ", q);
 		while (p.TOP > 0) {
+			q--;
+			p = nodes[q];
+		}
+		q++;
+		p = nodes[q];
+		while (p.TOP > 0) {
 			print("%s ", items[p.TOP].NAME);
 			q++;
 			p = nodes[q];
