@@ -1,0 +1,5 @@
+for (i in data/puzzle??) {
+	echo $i;
+	t1 $i > $i^.xcc;
+	xc $i^.xcc > $i^.out;
+}
